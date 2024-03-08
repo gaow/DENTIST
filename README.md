@@ -44,7 +44,7 @@ ENV_PATH="$MAMBA_ROOT_PREFIX/envs/toothache"
 export LD_LIBRARY_PATH="$ENV_PATH/lib:$LD_LIBRARY_PATH"
 export PATH="$ENV_PATH/bin:$PATH"
 export C_INCLUDE_PATH="$ENV_PATH/include:$C_INCLUDE_PATH"
-export CPLUS_INCLUDE_PATH="$ENV_PATH/include:$ENV_PATH/include/eigen3:$CPLUS_INCLUDE_PATH"
+export CPLUS_INCLUDE_PATH="$ENV_PATH/include:$ENV_PATH/include:$CPLUS_INCLUDE_PATH"
 ```
 
 # Basic usage
