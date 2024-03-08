@@ -25,7 +25,7 @@ and address the dependencies yourself on MKL, BOOST and EIGEN Libraries.
 
 
 # Downloads
-### Pre-compiled Executable Files
+## Pre-compiled Executable Files
 The executable file below is compiled with "-static" and tested on 64-bit Linux distributions on the x86_64 CPU platform,
 [DENTIST_1.3.0.0](https://www.dropbox.com/scl/fi/1yna9rizfy6s0ixek0cca/DENTIST.1.3.0.0.gz?rlkey=0ak0cdsev152jteibceit4mje&dl=0)
 [DENTIST_1.2.0.0](https://www.dropbox.com/s/cq5mmfonocvdiwh/DENTIST.1.2.0.0.gz?dl=0)
@@ -36,6 +36,16 @@ To download, you can run
 > wget -O DENTIST_1.3.0.0.gz https://www.dropbox.com/scl/fi/1yna9rizfy6s0ixek0cca/DENTIST.1.3.0.0.gz?rlkey=0ak0cdsev152jteibceit4mje&dl=0
 > wget -O DENTIST_1.2.0.0.gz https://www.dropbox.com/s/cq5mmfonocvdiwh/DENTIST.1.2.0.0.gz?dl=0
 
+## To compile (added March 7 by Gao Wang)
+
+```
+micromamba create -n toothache mkl mkl-include libgomp eigen boost zlib
+ENV_PATH="$MAMBA_ROOT_PREFIX/envs/toothache"
+export LD_LIBRARY_PATH="$ENV_PATH/lib:$LD_LIBRARY_PATH"
+export PATH="$ENV_PATH/bin:$PATH"
+export C_INCLUDE_PATH="$ENV_PATH/include:$C_INCLUDE_PATH"
+export CPLUS_INCLUDE_PATH="$ENV_PATH/include:$ENV_PATH/include/eigen3:$CPLUS_INCLUDE_PATH"
+```
 
 # Basic usage
 To run DENTIST with essential parameters,

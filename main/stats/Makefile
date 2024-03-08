@@ -4,7 +4,7 @@ OUTPUT = libStat.a
 # Compiler
 CXX = g++
 AR = ar
-LIBTOOL = libtool --mode=link cc -static
+LIBTOOL = libtool --mode=link cc 
 PKG_CPPFLAGS =  -DEIGEN_NO_DEBUG -DUSEDOUBLE  -DNDEBUG -fpic  -g -O3   -fopenmp  -std=gnu++11  -Wno-deprecated
 SRC =  dcdflib.cpp
 OBJ = $(SRC:.cpp=.o)

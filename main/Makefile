@@ -3,7 +3,7 @@ OUTPUT = libmain.a
 # # Compiler
 CXX = g++
 AR = ar
-LIBTOOL = libtool --mode=link cc -static
+LIBTOOL = libtool --mode=link cc
 # Require BOOST lib
 # Require EIGEN library
 
