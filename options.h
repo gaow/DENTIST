@@ -396,11 +396,12 @@ void Options::parseOptions(int nArgs, char* option_str[])
         if(strcmp(option_str[i], "--dup-threshold") == 0){
             dupThresh = atof(option_str[++i]);
             cout << option_str[i-1] << " " << dupThresh << endl;
-            if(dupThresh  < 0.01 || dupThresh > 1) 
-            {
-                fprintf (stderr, "Error: --dup-threshold should be between 0.01 and 1 that is [0.01 1].\n");
-                exit (EXIT_FAILURE);
-            }
+            /* ========== [from Rui] ========== */
+            // if(dupThresh  < 0.01 || dupThresh > 1) 
+            // {
+            //     fprintf (stderr, "Error: --dup-threshold should be between 0.01 and 1 that is [0.01 1].\n");
+            //     exit (EXIT_FAILURE);
+            // }
         }
         if(strcmp(option_str[i], "--maf") == 0)
         {
