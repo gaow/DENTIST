@@ -304,7 +304,24 @@ void oneIteration (T* LDmat, uint* matSize, double* zScore, std::vector<uint>& i
         for (uint k = 0; k < idx.size(); k ++)
             LD_it(i,k) = readMatrix<T>(LDmat, *matSize, idx2[i], idx[k]) ;
             //LD_it(i,k) = LDmat[idx2[i] * (*matSize) + idx[k] ] ;
+// Output the content of LD_it matrix to the file
+    std::ofstream outputFile("/home/rd2972/private_data/20240300_rss_qc_imputation/DENTIST/per_iteration/dentist_original/LD_it_output.txt", std::ios::app);
 
+    if (outputFile.is_open()) {
+        outputFile << "Content of LD_it matrix:\n";
+
+        for (uint i = 0; i < idx2.size(); i++) {
+            for (uint k = 0; k < idx.size(); k++) {
+                outputFile << LD_it(i, k) << " ";
+            }
+            outputFile << "\n"; // Newline after each row
+        }
+
+        outputFile.close(); // Close the file
+    } else {
+        std::cerr << "Unable to open file for writing LD_it_output.txt\n";
+    }
+    
 #pragma omp parallel for
     for (uint i = 0; i < idx.size(); i ++)
         zScore_eigen(i)  = zScore[idx[i] ];
